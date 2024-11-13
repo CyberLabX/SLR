@@ -23,9 +23,11 @@ for i, pub in enumerate(pubs):
     publication['title'] = pub['bib'].get('title', 'NoTitle')
     publication['pub_year'] = pub['bib'].get('pub_year', 'NoDate')
     publication['abstract'] = pub['bib'].get('abstract', 'NoAbstract')
-    publication['pub_url'] = pub['bib'].get('pub_url', 'NoURL')
+    publication['pub_url'] = pub.get('pub_url', 'NoURL')
     publications.append(publication)
     delay = random.randint(3, 10)
+    pprint(pub)
+    print('################\n\n')
     time.sleep(delay)
 
 # with open("jeronimo_google.csv", "w", newline="") as f:
